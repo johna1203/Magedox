@@ -10,6 +10,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
+import com.kodokux.magedox.MagedoxIcon;
 import com.kodokux.magedox.MagedoxModel;
 
 import javax.swing.*;
@@ -39,10 +40,8 @@ public class MyConsole extends JPanel implements Disposable {
                     .registerToolWindow(MAGEDOX_TOOLWINDOW_ID, true, ToolWindowAnchor.BOTTOM, this.magedoxModel.getProject(), true);
         }
 
-        JPanel p1 = new JPanel();
-        p1.setBackground(Color.BLUE);
-
-        final Content content = ContentFactory.SERVICE.getInstance().createContent(p1, "", false);
+        final Content content = ContentFactory.SERVICE.getInstance().createContent(this, "", false);
+        toolWindow.setIcon(MagedoxIcon.MAGEDOX_ICON_16x16);
         toolWindow.getContentManager().addContent(content);
 
     }
