@@ -1,0 +1,54 @@
+<idea-plugin version="2">
+    <id>com.kodokux.magedox</id>
+    <name>Plugin for magento</name>
+    <version>1.0</version>
+    <vendor email="johnathan@kodokuman.com" url="http://www.kodokux.com">Kodokux System</vendor>
+
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <small>most HTML tags may be used</small>
+      ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <small>most HTML tags may be used</small>
+      ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="107.105"/>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products -->
+    <depends>com.intellij.modules.lang</depends>
+
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!--&lt;!&ndash; Add your actions here &ndash;&gt;-->
+        <!--<group id="Magedox.Magemenu" text="Magedox" description="Magedox menu">-->
+            <!--<add-to-group group-id="ToolsMenu" anchor="last"/>-->
+            <!--<action id="Myplugin.Dialogs" class="com.kodokux.magedox.action.ShowConsole"-->
+                    <!--text="Magedox console" description="Show console"/>-->
+        <!--</group>-->
+        <action id="MagedokuxMenu" class="com.kodokux.magedox.action.ShowConsole" text="Magedox"
+                description="Magento Plugin by Kodokux">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl k"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="PHP" implementationClass="com.kodokux.magedox.MageCompletionContributor"/>
+        <!-- Add your extensions here -->
+    </extensions>
+</idea-plugin>
