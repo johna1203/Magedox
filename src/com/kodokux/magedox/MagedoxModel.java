@@ -19,7 +19,7 @@ public class MagedoxModel implements Disposable {
 
     @Override
     public void dispose() {
-        System.out.println("MagedoxModel::dispose");
+        System.out.println("MagedoxModel::dispose 1");
     }
 
     public Project getProject () {
